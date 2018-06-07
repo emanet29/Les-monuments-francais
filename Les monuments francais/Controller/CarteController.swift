@@ -19,9 +19,18 @@ class CarteController: UIViewController {
         super.viewDidLoad()
         
     }
+    
     @IBAction func meLocaliser(_ sender: Any) {
+        
     }
     
     @IBAction func segmentChoisi(_ sender: Any) {
+        switch segment.selectedSegmentIndex {
+        case 0: carte.mapType = .standard
+        case 1: carte.mapType = .satellite
+        case 2: carte.mapType = .hybrid
+        default:
+            break
+        }
     }
 }
