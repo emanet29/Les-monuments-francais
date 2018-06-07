@@ -32,16 +32,32 @@ class CarteController: UIViewController {
             guard data != nil else { return }
             do {
                 self.monuments = try JSONDecoder().decode([Monument].self, from: data!)
-                for monument in self.monuments {
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = CLLocationCoordinate2D(latitude: Double(monument.latitude!)!, longitude: Double(monument.longitude!)!)
-                    annotation.title = monument.name ?? "Pas de nom"
-                    self.carte.addAnnotation(annotation)
+                DispatchQueue.main.async {
+                    self.obtenirAnnotations()
                 }
+                
             } catch {
                 print(error.localizedDescription)
             }
         }.resume()
+        
+    }
+    
+    func obtenirAnnotations() {
+        for monument in self.monuments {
+            if let latitudeString = monument.latitude, let longitudeString = monument.longitude {
+                if let latitude = Double(latitudeString), let longitude = Double(longitudeString) {
+                    let coordonnees = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                    let titre = monument.name ?? ""
+                    let adresse = monument.name ?? ""
+                    let monAnnotation = MonAnnotation(titre: titre, adresse: adresse, coordonnees: coordonnees)
+                    self.carte.addAnnotation(monAnnotation)
+                }
+                
+            }
+            
+            
+        }
         
     }
     
