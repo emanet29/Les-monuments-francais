@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		4C8CB67520C932BC0045E135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CB67420C932BC0045E135 /* AppDelegate.swift */; };
-		4C8CB67720C932BC0045E135 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CB67620C932BC0045E135 /* ViewController.swift */; };
 		4C8CB67A20C932BC0045E135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CB67820C932BC0045E135 /* Main.storyboard */; };
 		4C8CB67C20C932BD0045E135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CB67B20C932BD0045E135 /* Assets.xcassets */; };
 		4C8CB67F20C932BD0045E135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CB67D20C932BD0045E135 /* LaunchScreen.storyboard */; };
+		4C8CB68A20C933740045E135 /* CarteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CB68920C933740045E135 /* CarteController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C8CB67120C932BC0045E135 /* Les monuments francais.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Les monuments francais.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8CB67420C932BC0045E135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C8CB67620C932BC0045E135 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C8CB67920C932BC0045E135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C8CB67B20C932BD0045E135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C8CB67E20C932BD0045E135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C8CB68020C932BD0045E135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8CB68920C933740045E135 /* CarteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,38 @@
 		4C8CB67320C932BC0045E135 /* Les monuments francais */ = {
 			isa = PBXGroup;
 			children = (
+				4C8CB68820C9335B0045E135 /* Model */,
+				4C8CB68720C933530045E135 /* View */,
+				4C8CB68620C9334D0045E135 /* Controller */,
 				4C8CB67420C932BC0045E135 /* AppDelegate.swift */,
-				4C8CB67620C932BC0045E135 /* ViewController.swift */,
 				4C8CB67820C932BC0045E135 /* Main.storyboard */,
 				4C8CB67B20C932BD0045E135 /* Assets.xcassets */,
 				4C8CB67D20C932BD0045E135 /* LaunchScreen.storyboard */,
 				4C8CB68020C932BD0045E135 /* Info.plist */,
 			);
 			path = "Les monuments francais";
+			sourceTree = "<group>";
+		};
+		4C8CB68620C9334D0045E135 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C8CB68920C933740045E135 /* CarteController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4C8CB68720C933530045E135 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C8CB68820C9335B0045E135 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C8CB67720C932BC0045E135 /* ViewController.swift in Sources */,
 				4C8CB67520C932BC0045E135 /* AppDelegate.swift in Sources */,
+				4C8CB68A20C933740045E135 /* CarteController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
