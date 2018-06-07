@@ -15,6 +15,7 @@ class CarteController: UIViewController {
     @IBOutlet weak var maPositionBouton: UIButton!
     @IBOutlet weak var segment: UISegmentedControl!
     
+    let urlString = "https://www.data.gouv.fr/s/resources/monuments-historiques-francais/20150408-163911/monuments.json"
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
