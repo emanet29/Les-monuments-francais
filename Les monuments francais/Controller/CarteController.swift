@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-import CoreLocation
 
 class CarteController: UIViewController {
     
@@ -19,7 +18,7 @@ class CarteController: UIViewController {
     let urlString = "https://www.data.gouv.fr/s/resources/monuments-historiques-francais/20150408-163911/monuments.json"
     var locationManager = CLLocationManager()
     var monuments = [Monument]()
-    let codeur = CLGeocoder()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,22 +51,15 @@ class CarteController: UIViewController {
                     let coordonnees = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                     let titre = monument.name ?? ""
                     let location = CLLocation(latitude: latitude, longitude: longitude)
-                    var adresse = ""
-                    codeur.reverseGeocodeLocation(location) { (placemarks, error) in
-                        if let erreur = error {
-                            print("Aucune adresse disponible -> " + erreur.localizedDescription)
-                        } else if let array = placemarks, array.count > 0 {
-                            let monPositionnement = array.last
-                            let numero = monPositionnement?.subThoroughfare ?? ""
-                            let rue = monPositionnement?.thoroughfare ?? ""
-                            let ville = monPositionnement?.locality ?? ""
-                            adresse = numero + " " + rue + " " + ville
-                            
+                    MonGeocoder.obtenir.adresseDepuis(location) { (adresse, erreur) -> (Void) in
+                        var monAdresse = ""
+                        if adresse != nil {
+                            monAdresse = adresse!
                         }
-                        
-                        let monAnnotation = MonAnnotation(titre: titre, adresse: adresse, coordonnees: coordonnees)
+                        let monAnnotation = MonAnnotation(titre: titre, adresse: monAdresse, coordonnees: coordonnees)
                         self.carte.addAnnotation(monAnnotation)
                     }
+                    
                     
                     
                     
