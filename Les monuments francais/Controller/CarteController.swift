@@ -15,13 +15,17 @@ class CarteController: UIViewController {
     @IBOutlet weak var maPositionBouton: UIButton!
     @IBOutlet weak var segment: UISegmentedControl!
     
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        carte.showsUserLocation = true
+        miseEnPlace()
     }
     
     @IBAction func meLocaliser(_ sender: Any) {
-        
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func segmentChoisi(_ sender: Any) {
